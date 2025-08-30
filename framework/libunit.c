@@ -6,7 +6,7 @@
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:48:53 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/30 17:50:57 by ldick            ###   ########.fr       */
+/*   Updated: 2025/08/30 18:09:55 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,22 @@ static void	write_result(int passed, int total)
 
 static void	write_output(char *str1, char *str2, char *str3)
 {
+	write(1, YELLOW, 5);
 	while (*str1)
 		write(1, str1++, 1);
 	write(1, ": ", 2);
+	write(1, RESET, 4);
 	while (*str2)
 		write(1, str2++, 1);
 	write(1, ": ", 2);
+	if (str3[1] == 'O')
+		write(1, GREEN, 5);
+	else
+		write(1, RED, 5);
 	while (*str3)
 		write(1, str3++, 1);
 	write(1, "\n", 1);
+	write(1, RESET, 4);
 }
 
 void	load_test(t_unit_test **list, char *name, int (*test_func)(void))
