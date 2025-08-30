@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libunit.h                                          :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 13:17:38 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/30 13:19:17 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/30 14:47:01 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/30 14:47:42 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-# define LIBUNIT_H
+#include "libunit.h"
 
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+int basic_test(void);
+int null_test(void);
+int bus_error_test(void);
 
-#endif
+int strlen_launcher(void)
+{
+	
+}
