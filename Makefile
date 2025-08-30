@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ldick <ldick@student.42.fr>                +#+  +:+       +#+         #
+#    By: sdhal <sdhal@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 19:28:14 by ldick             #+#    #+#              #
-#    Updated: 2025/08/30 17:18:46 by ldick            ###   ########.fr        #
+#    Updated: 2025/08/30 19:07:19 by sdhal            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ ERROR_FILE	=	error.log
 #											Sources												#
 #################################################################################################
 
-FRAMEWORK_SRC = framework/libunit.c
+FRAMEWORK_SRC = framework/libunit.c framework/libunit_utils.c
 FRAMEWORK_OBJ = $(FRAMEWORK_SRC:.c=.o)
 
 #################################################################################################
