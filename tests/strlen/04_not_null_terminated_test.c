@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_utils.c                                      :+:      :+:    :+:   */
+/*   04_not_null_terminated_test.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 13:19:52 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/30 13:21:23 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/30 15:04:10 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/30 17:30:06 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+int	ft_strlen(char *str);
 
-int write_str(char *str, int fd)
+int	not_null_terminated_test(void)
 {
-	while(*str++)
-		write(fd, &*str, 1);
+	if (ft_strlen((char *)0x12345678) == 0)
+		return (0);
+	else
+		return (-1);
 }

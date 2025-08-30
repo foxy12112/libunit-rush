@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_basic_test.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:02:34 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/30 17:33:44 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/30 15:21:16 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/30 17:29:40 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str);
+#include "framework/libunit.h"
 
-int	basic_test(void)
+int	strlen_launcher(void);
+
+int	main(void)
 {
-	if (ft_strlen("i am 24 characters long\n") == 24)
-		return (0);
-	else
-		return (-1);
+	int	result;
+
+	result = strlen_launcher();
+	return (result);
 }

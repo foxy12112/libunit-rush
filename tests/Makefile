@@ -6,12 +6,11 @@
 #    By: ldick <ldick@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 19:28:14 by ldick             #+#    #+#              #
-#    Updated: 2025/08/30 17:18:46 by ldick            ###   ########.fr        #
+#    Updated: 2025/08/30 17:47:32 by ldick            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libunit.a
-TEST_BIN = run_tests
+NAME = unit_test
 
 #################################################################################################
 #											Colors												#
@@ -38,8 +37,11 @@ ERROR_FILE	=	error.log
 #											Sources												#
 #################################################################################################
 
-FRAMEWORK_SRC = framework/libunit.c
-FRAMEWORK_OBJ = $(FRAMEWORK_SRC:.c=.o)
+TEST_SRCS = ../main.c strlen/00_launcher.c strlen/01_basic_test.c strlen/02_null_test.c strlen/03_very_long_line_test.c strlen/04_not_null_terminated_test.c
+FUNCTION_SRCS = ../functions/ft_strlen.c
+SRCS = $(TEST_SRCS) $(FUNCTION_SRCS)
+
+OBJS = $(SRCS:.c=.o) $(FUNCTION_SRCS.c=.o)
 
 #################################################################################################
 #											Rules												#
@@ -47,25 +49,23 @@ FRAMEWORK_OBJ = $(FRAMEWORK_SRC:.c=.o)
 
 all:			$(NAME)
 
-$(NAME): $(FRAMEWORK_OBJ)
-		@ar rcs $(NAME) $(FRAMEWORK_OBJ)
-		@echo "$(GREEN)Static library $(NAME) created.$(NC)"
+$(NAME): ../libunit.a $(OBJS)
+		@$(CC) $(CFLAGS) $(OBJS) ../libunit.a -o $(NAME)
+		@echo "$(GREEN)test routine $(NAME) created.$(NC)"
 
 %.o: %.c
 			$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-test: $(NAME) $(FUNCTIONS_OBJ) $(TEST_OBJ)
-		@make -C tests test --silent
-
 clean:
-				@make -C tests clean --silent
-				@rm -rf $(FRAMEWORK_OBJ) $(FUNCTIONS_OBJ) $(TEST_OBJ)
+				@rm -rf $(OBJS)
 				@rm -f $(ERROR_FILE)
 
 fclean:			clean
-				@make -C tests fclean --silent
 				@rm -f $(NAME) $(TEST_BIN)
 
 re:				fclean all
+
+test: re
+	-./$(NAME)
 
 .PHONY:			all clean fclean re
