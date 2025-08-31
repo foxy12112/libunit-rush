@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   11_empty_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:21:16 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/31 14:03:48 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/31 13:28:23 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/31 15:41:47 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "framework/libunit.h"
-#include "functions/libft/libft.h"
+#include "../libft_tests.h"
 
-int	atoi_launcher(void);
-
-int	main(void)
+int	empty_str(void)
 {
-	int	result;
-
-	result = atoi_launcher();
-	return (result);
+	if (ft_atoi("") == 0)
+		return (0);
+	else
+		return (-1);
 }

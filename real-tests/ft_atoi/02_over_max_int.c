@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   02_over_max_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:21:16 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/31 14:03:48 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/31 13:55:57 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/31 15:41:52 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "framework/libunit.h"
-#include "functions/libft/libft.h"
+#include "../libft_tests.h"
 
-int	atoi_launcher(void);
-
-int	main(void)
+int	over_max_int(void)
 {
-	int	result;
-
-	result = atoi_launcher();
-	return (result);
+	if (ft_atoi("9999999999") == __INT_MAX__)
+		return (0);
+	else
+		return (-1);
 }

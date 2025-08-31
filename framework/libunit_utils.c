@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdhal <sdhal@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 18:52:54 by sdhal             #+#    #+#             */
-/*   Updated: 2025/08/30 19:08:05 by sdhal            ###   ########.fr       */
+/*   Updated: 2025/08/31 12:51:32 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	write_result(int passed, int total)
 	write_number(passed);
 	write(1, "/", 1);
 	write_number(total);
-	write(1, " tests checked\n", 16);
+	write(1, " tests passed\n", 15);
 }
 
 void	write_output(char *str1, char *str2, char *str3)

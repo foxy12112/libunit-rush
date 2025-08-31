@@ -6,7 +6,7 @@
 #    By: ldick <ldick@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 19:28:14 by ldick             #+#    #+#              #
-#    Updated: 2025/08/30 17:47:32 by ldick            ###   ########.fr        #
+#    Updated: 2025/08/31 12:23:03 by ldick            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ ERROR_FILE	=	error.log
 #################################################################################################
 
 TEST_SRCS = ../main.c strlen/00_launcher.c strlen/01_basic_test.c strlen/02_null_test.c strlen/03_very_long_line_test.c strlen/04_not_null_terminated_test.c
-FUNCTION_SRCS = ../functions/ft_strlen.c
+FUNCTION_SRCS = ../functions/ft_strlen/ft_strlen.c
 SRCS = $(TEST_SRCS) $(FUNCTION_SRCS)
 
 OBJS = $(SRCS:.c=.o) $(FUNCTION_SRCS.c=.o)

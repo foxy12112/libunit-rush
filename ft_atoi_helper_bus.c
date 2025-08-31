@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi_helper_bus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:21:16 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/31 14:03:48 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/31 15:03:42 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/31 15:38:50 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "framework/libunit.h"
-#include "functions/libft/libft.h"
+#include "real-tests/libft_tests.h"
 
-int	atoi_launcher(void);
+#if defined(__i386__)
+# undef FLAG
+# define FLAG 0
+#elif defined(__x86_64__)
+# undef FLAG
+# define FLAG 1
+#endif
 
-int	main(void)
+char	*helper(void)
 {
-	int	result;
+	char	arr[4];
+	int		*ptr;
 
-	result = atoi_launcher();
-	return (result);
+	if (FLAG == 1)
+		asm("pushf\norl $0x40000,(%rsp)\npopf");
+	else
+		asm("pushf\norl $0x40000,(%esp)\npopf");
+	ptr = (int *)(arr + 1);
+	*ptr = 42;
+	return ((char *)ptr);
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   16_space_between_sign_and_digit.c                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldick <ldick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:21:16 by ldick             #+#    #+#             */
-/*   Updated: 2025/08/31 14:03:48 by ldick            ###   ########.fr       */
+/*   Created: 2025/08/31 13:28:23 by ldick             #+#    #+#             */
+/*   Updated: 2025/08/31 15:39:20 by ldick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "framework/libunit.h"
-#include "functions/libft/libft.h"
+#include "../libft_tests.h"
 
-int	atoi_launcher(void);
-
-int	main(void)
+int	space_between_sign_and_digit(void)
 {
-	int	result;
-
-	result = atoi_launcher();
-	return (result);
+	if (ft_atoi(" + 123") == 0)
+		return (0);
+	else
+		return (-1);
 }
